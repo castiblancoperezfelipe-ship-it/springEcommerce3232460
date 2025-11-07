@@ -11,21 +11,21 @@ import jakarta.persistence.Table;
 @Table(name = "detalles")
 public class DetalleOrden {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//ANOTACION JPA
-    private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // ANOTACION JPA
+	private Integer id;
 	private String nombre;
 	private Double cantidad;
 	private Double precio;
 	private Double total;
-	
-	@ManyToOne 
-	private Orden orden;
-	
+
+	@ManyToOne
+	private Orden ordenes;
+
 	@ManyToOne
 	private Producto producto;
 
 	public DetalleOrden() {
-		
+
 	}
 
 	public DetalleOrden(Integer id, String nombre, Double cantidad, Double precio, Double total) {
@@ -77,12 +77,12 @@ public class DetalleOrden {
 		this.total = total;
 	}
 
-	public Orden getOrden() {
-		return orden;
+	public Orden getOrdenes() {
+		return ordenes;
 	}
 
-	public void setOrden(Orden orden) {
-		this.orden = orden;
+	public void setOrdenes(Orden ordenes) {
+		this.ordenes = ordenes;
 	}
 
 	public Producto getProducto() {
@@ -98,8 +98,5 @@ public class DetalleOrden {
 		return "DetalleOrden [id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio
 				+ ", total=" + total + "]";
 	}
-	
-	
-	
 
 }
