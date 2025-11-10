@@ -15,9 +15,9 @@ public interface IUsruarioService {
 	
 	public void delete(Integer id);
 	
-	Optional<Usuario> finById(Integer id);
+	Optional<Usuario> findById(Integer id);
 	
-	Optional<Usuario> finById(String email);
+	Optional<Usuario> findById(String email);
 	
 	List<Usuario> findAll();
 
